@@ -11,36 +11,44 @@
     <!-- Audio Player (Hidden) -->
     <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
-    <!-- Manual Play Button -->
-    <button onclick="playMusic()">Click to Play Music</button>
-
     <div class="container">
-        <h1>Will you be my Valentine, my dear cocaine?  ~BuFi </h1>
+        <h1>Will you be my Valentine, my dear cocaine? ~BuFi </h1>
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
             <button class="no-button" onclick="handleNoClick()">No</button>
         </div>
         <div class="gif_container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
     </div>
 
     <script>
-        // Force Autoplay on Page Load
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             let audio = document.getElementById("bgMusic");
 
+            // Try to play music automatically
             let playPromise = audio.play();
+
+            // If autoplay is blocked, play when user clicks anywhere
             if (playPromise !== undefined) {
-                playPromise.catch(error => console.log("Autoplay blocked:", error));
+                playPromise.catch(() => {
+                    document.addEventListener("click", function () {
+                        audio.play();
+                    }, { once: true }); // Plays on first click only
+                });
             }
         });
 
-        // Manual Play Button
-        function playMusic() {
-            document.getElementById("bgMusic").play();
+        // Function to handle button clicks
+        function handleYesClick() {
+            alert("I love you so much 💖 and I miss you so much 🥺\nI hope we can spend it together, at least online if not offline!");
+        }
+
+        function handleNoClick() {
+            alert("Oh no! 😢");
         }
     </script>
 
