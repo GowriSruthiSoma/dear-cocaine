@@ -1,30 +1,30 @@
-const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+document.getElementById("yes-btn").addEventListener("click", function () {
+    window.location.href = "yes_page.html";
+});
+
+const noButton = document.getElementById("no-btn");
+const noteContainer = document.getElementById("note-container");
+
+const cuteNotes = [
+    "Are you sure? 🥺",
+    "But I made this with love! 💗",
+    "You're breaking my heart! 💔",
+    "Give me another chance? 🥹",
+    "I promise I'm super fun! 🎉",
+    "You're missing out on the best Valentine! 😘"
 ];
 
-let messageIndex = 0;
+let index = 0;
 
-function handleNoClick() {
-    const noButton = document.querySelector('.no-button');
-    const yesButton = document.querySelector('.yes-button');
-    
-    noButton.textContent = messages[messageIndex];
-    messageIndex = (messageIndex + 1) % messages.length;
-    
-    // Increase "Yes" button size when "No" is clicked
-    let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.5}px`;
-}
-
-function handleYesClick() {
-    window.location.href = "yes_page.html";
-}
+noButton.addEventListener("click", function () {
+    if (index < cuteNotes.length) {
+        const note = document.createElement("p");
+        note.textContent = cuteNotes[index];
+        note.classList.add("note");
+        noteContainer.appendChild(note);
+        index++;
+    } else {
+        noButton.textContent = "Okay, I give up... 😭";
+        noButton.disabled = true;
+    }
+});
