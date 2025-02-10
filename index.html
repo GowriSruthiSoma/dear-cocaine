@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine?</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <script>
-        window.addEventListener('load', function() {
-            let audio = new Audio('background-music.mp3');
-            audio.loop = true;
-            audio.play().catch(error => console.log('Autoplay blocked:', error));
-        });
-    </script>
 </head>
+
 <body>
-    <audio autoplay loop hidden>
+    <!-- Audio Player (Hidden) -->
+    <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Manual Play Button -->
+    <button onclick="playMusic()">Click to Play Music</button>
+
     <div class="container">
-        <h1>Will you be my Valentine, my dear cocaine?    ~Bufi </h1>
+        <h1>Will you be my Valentine, my dear cocaine?  ~BuFi </h1>
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
             <button class="no-button" onclick="handleNoClick()">No</button>
@@ -29,6 +26,24 @@
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
     </div>
+
+    <script>
+        // Force Autoplay on Page Load
+        document.addEventListener("DOMContentLoaded", function() {
+            let audio = document.getElementById("bgMusic");
+
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => console.log("Autoplay blocked:", error));
+            }
+        });
+
+        // Manual Play Button
+        function playMusic() {
+            document.getElementById("bgMusic").play();
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
