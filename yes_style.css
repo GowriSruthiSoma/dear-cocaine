@@ -1,66 +1,30 @@
-/* General Page Styling */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #fde4e4; /* Soft pink background */
+    background-color: #f9e3e3;
     font-family: 'Arial', sans-serif;
-    flex-direction: column;
-    text-align: center;
 }
 
-/* Main Container */
 .container {
     text-align: center;
-    padding: 20px;
-    max-width: 90%;
 }
 
-/* Heading */
-h1 {
-    font-size: 2.5em;
+.header_text {
+    font-size: 3em;
     color: #d32f2f;
 }
 
-/* GIF Styling */
 .gif_container img {
-    max-width: 90%;  /* Ensures it doesn’t overflow */
-    height: auto;  /* Maintains aspect ratio */
-    display: block;
-    margin: 20px auto;  /* Centers the image */
-    border-radius: 10px;
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
 }
 
-/* Love Message Styling */
-.love-message {
-    font-size: 1.2em;
+.poem p, .message p {
+    font-size: 1.5em;
     color: #333;
-    margin-top: 15px;
     font-weight: bold;
-}
-
-/* Poem Styling */
-.poem {
-    font-size: 1.3em;
-    color: #555;
-    max-width: 600px;
-    margin: 10px auto;
-    line-height: 1.5;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .poem {
-        font-size: 1.1em;
-    }
-
-    .love-message {
-        font-size: 1.1em;
-    }
 }
