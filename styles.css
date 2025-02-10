@@ -1,71 +1,65 @@
-/* Updated styles.css */
+/* Center everything */
 body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #ffe6f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
 }
 
+/* Container styling */
 .container {
-    margin-top: 100px;
+    text-align: center;
 }
 
+/* Main header text */
 h1 {
     font-size: 2.5em;
-    color: #ff66b2;
+    color: #d32f2f;
 }
 
+/* Buttons section */
 .buttons {
     margin-top: 20px;
-    position: relative;
-    display: inline-block;
 }
 
+/* Yes button */
 .yes-button {
-    font-size: 2.2em; /* Initial size */
-    padding: 20px 50px;
-    background-color: #4CAF50; /* Green */
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #4caf50;
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
-.yes-button:hover {
-    background-color: #45a049;
-}
-
+/* No button */
 .no-button {
-    font-size: 1.2em;
-    padding: 10px 30px;
-    background-color: #ff4d4d; /* Red */
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #f44336;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
-.no-button:hover {
-    background-color: #cc0000;
+/* Make Yes button grow when No is clicked */
+.yes-button.grow {
+    font-size: 2.5em !important;
 }
 
-/* Cute Notes appear near NO button */
-.note-container {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff0f5;
-    border: 2px solid #ff66b2;
+/* GIF styling */
+.gif_container img {
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    width: auto;
-    max-width: 300px;
-    font-size: 1.2em;
-    color: #ff3385;
-    font-weight: bold;
-    text-align: center;
-    display: block; /* Ensuring it is visible when NO is clicked */
+    margin-top: 20px;
 }
