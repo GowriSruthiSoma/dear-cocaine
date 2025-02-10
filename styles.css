@@ -19,9 +19,9 @@ h1 {
 }
 
 .yes-button {
-    font-size: 2.2em; /* Further increased size */
+    font-size: 2.2em; /* Initial size */
     padding: 20px 50px;
-    background-color: #ff66b2;
+    background-color: #4CAF50; /* Green */
     color: white;
     border: none;
     border-radius: 12px;
@@ -30,14 +30,14 @@ h1 {
 }
 
 .yes-button:hover {
-    background-color: #ff3385;
+    background-color: #45a049;
 }
 
 .no-button {
     font-size: 1.2em;
     padding: 10px 30px;
-    background-color: #ffcccc;
-    color: #ff3385;
+    background-color: #ff4d4d; /* Red */
+    color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -45,23 +45,23 @@ h1 {
 }
 
 .no-button:hover {
-    background-color: #ff99aa;
-}
-
-.gif_container {
-    margin-top: 20px;
+    background-color: #cc0000;
 }
 
 .note-container {
-    display: block; /* Changed from 'none' to 'block' so notes appear on screen */
+    display: block; /* Ensuring notes appear on screen properly */
     margin-top: 20px;
     padding: 15px;
     background-color: #fff0f5;
     border: 2px solid #ff66b2;
     border-radius: 10px;
-    width: 80%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff3385;
+    font-weight: bold;
 }
 
 /* Styles for Yes Page */
