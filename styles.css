@@ -16,6 +16,8 @@ h1 {
 
 .buttons {
     margin-top: 20px;
+    position: relative;
+    display: inline-block;
 }
 
 .yes-button {
@@ -48,30 +50,22 @@ h1 {
     background-color: #cc0000;
 }
 
+/* Cute Notes appear near NO button */
 .note-container {
-    display: block; /* Ensuring notes appear on screen properly */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 20px;
-    padding: 15px;
+    padding: 10px;
     background-color: #fff0f5;
     border: 2px solid #ff66b2;
     border-radius: 10px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    width: auto;
+    max-width: 300px;
     font-size: 1.2em;
     color: #ff3385;
     font-weight: bold;
-}
-
-/* Styles for Yes Page */
-.yes-container {
     text-align: center;
-    margin-top: 100px;
-}
-
-.yes-message {
-    font-size: 3.5em; /* Increased size */
-    color: #ff3385;
-    font-weight: bold;
+    display: block; /* Ensuring it is visible when NO is clicked */
 }
