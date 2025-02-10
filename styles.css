@@ -16,40 +16,50 @@ body {
 }
 
 /* Main header text */
-.header_text {
-    font-size: 3em;
+h1 {
+    font-size: 2.5em;
     color: #d32f2f;
+}
+
+/* Buttons section */
+.buttons {
+    margin-top: 20px;
+}
+
+/* Yes button */
+.yes-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* No button */
+.no-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Make Yes button grow when No is clicked */
+.yes-button.grow {
+    font-size: 2.5em !important;
 }
 
 /* GIF styling */
 .gif_container img {
-    width: 100%;
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
-}
-
-/* Poem Styling */
-.poem {
-    font-size: 1.5em;
-    color: #d32f2f;
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: #fff3f3;
-    padding: 15px;
-    border-radius: 10px;
-    display: inline-block;
-}
-
-/* Love Message Styling */
-.love-message {
-    font-size: 1.5em;
-    color: #d32f2f;
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: #ffecec;
-    padding: 15px;
-    border-radius: 10px;
-    display: inline-block;
 }
