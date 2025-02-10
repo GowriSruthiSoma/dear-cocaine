@@ -8,10 +8,9 @@
 </head>
 
 <body>
-    <!-- Audio Player (Autoplay & Hidden) -->
+    <!-- Audio Player (Autoplay & Click Fallback) -->
     <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
 
     <div class="container">
@@ -26,25 +25,32 @@
     </div>
 
     <script>
+        // Handle music autoplay
         document.addEventListener("DOMContentLoaded", function () {
             let audio = document.getElementById("bgMusic");
 
-            // Try to play music automatically
             let playPromise = audio.play();
-
-            // If autoplay is blocked, play when user clicks anywhere
             if (playPromise !== undefined) {
                 playPromise.catch(() => {
                     document.addEventListener("click", function () {
                         audio.play();
-                    }, { once: true }); // Ensures it plays on first click only
+                    }, { once: true });
                 });
             }
         });
 
-        // Function to handle "Yes" click (Added your message)
+        // Function to handle "Yes" click (Redirect to Yes Page)
         function handleYesClick() {
-            alert("I love you so much 💖 and I miss you so much 🥺\nI hope we can spend it together, at least online if not offline!");
+            window.location.href = "yes_page.html";
         }
 
-        function 
+        // Function to handle "No" click (Funny Reaction)
+        function handleNoClick() {
+            alert("Are you sure? 🥺💔");
+            setTimeout(() => {
+                alert("Think again... 😭");
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
