@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <!-- Audio Player (Hidden & Autoplay) -->
+    <!-- Background Music (Autoplay Fix) -->
     <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
     </audio>
@@ -16,8 +16,8 @@
     <div class="container">
         <h1>Will you be my Valentine, my dear cocaine? ~BuFi 💖</h1>
         <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
         </div>
         <div class="gif_container">
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
@@ -25,10 +25,9 @@
     </div>
 
     <script>
+        // Ensure Music Plays (Autoplay Fix)
         document.addEventListener("DOMContentLoaded", function () {
             let audio = document.getElementById("bgMusic");
-
-            // Fix autoplay issue
             let playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.catch(() => {
@@ -39,16 +38,29 @@
             }
         });
 
-        function handleYesClick() {
-            window.location.href = "yes_page.html"; // Redirect to Yes page
-        }
+        // YES Button Functionality
+        document.getElementById("yesButton").addEventListener("click", function () {
+            window.location.href = "yes_page.html";
+        });
 
-        function handleNoClick() {
-            alert("Are you sure? 🥺💔");
-            setTimeout(() => {
-                alert("Think again... 😭");
-            }, 1000);
-        }
+        // NO Button Functionality
+        document.getElementById("noButton").addEventListener("click", function () {
+            let messages = [
+                "Are you sure? 🥺💔",
+                "Think again... 😭",
+                "Really? I will cry 😭💔",
+                "Last chance!!! 😣"
+            ];
+            let i = 0;
+            function showMessage() {
+                if (i < messages.length) {
+                    alert(messages[i]);
+                    i++;
+                    setTimeout(showMessage, 800);
+                }
+            }
+            showMessage();
+        });
     </script>
 </body>
 </html>
