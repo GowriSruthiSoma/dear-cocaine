@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     noButton.addEventListener("click", function () {
         if (noteIndex < notes.length) {
             noteContainer.innerText = notes[noteIndex];
+            noteContainer.style.display = "block";
+            noteContainer.style.left = `${noButton.offsetLeft}px`;
+            noteContainer.style.top = `${noButton.offsetTop + 50}px`;
             noteIndex++;
         }
         
@@ -24,11 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
         yesSize += 0.5;
         yesButton.style.fontSize = `${yesSize}em`;
         yesButton.style.padding = `${yesSize * 8}px ${yesSize * 20}px`;
-
-        // Move note container near the NO button
-        noteContainer.style.position = "absolute";
-        noteContainer.style.left = `${noButton.offsetLeft}px`;
-        noteContainer.style.top = `${noButton.offsetTop + 50}px`;
     });
 
     yesButton.addEventListener("click", function () {
