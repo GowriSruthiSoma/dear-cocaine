@@ -1,65 +1,77 @@
-/* Center everything */
+/* Updated styles.css */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f9e3e3;
-    font-family: 'Arial', sans-serif;
-    flex-direction: column;
-}
-
-/* Container styling */
-.container {
     text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f2;
 }
 
-/* Main header text */
+.container {
+    margin-top: 100px;
+}
+
 h1 {
     font-size: 2.5em;
-    color: #d32f2f;
+    color: #ff66b2;
 }
 
-/* Buttons section */
 .buttons {
     margin-top: 20px;
 }
 
-/* Yes button */
 .yes-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #4caf50;
+    font-size: 2.2em; /* Further increased size */
+    padding: 20px 50px;
+    background-color: #ff66b2;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
-/* No button */
+.yes-button:hover {
+    background-color: #ff3385;
+}
+
 .no-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
+    font-size: 1.2em;
+    padding: 10px 30px;
+    background-color: #ffcccc;
+    color: #ff3385;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Make Yes button grow when No is clicked */
-.yes-button.grow {
-    font-size: 2.5em !important;
-}
-
-/* GIF styling */
-.gif_container img {
-    max-width: 100%;
-    height: auto;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.no-button:hover {
+    background-color: #ff99aa;
+}
+
+.gif_container {
     margin-top: 20px;
+}
+
+.note-container {
+    display: block; /* Changed from 'none' to 'block' so notes appear on screen */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff0f5;
+    border: 2px solid #ff66b2;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for Yes Page */
+.yes-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.yes-message {
+    font-size: 3.5em; /* Increased size */
+    color: #ff3385;
+    font-weight: bold;
 }
