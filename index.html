@@ -8,13 +8,13 @@
 </head>
 
 <body>
-    <!-- Audio Player (Autoplay & Click Fallback) -->
+    <!-- Audio Player (Hidden & Autoplay) -->
     <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
-        <h1>Will you be my Valentine, my dear cocaine? ~BuFi </h1>
+        <h1>Will you be my Valentine, my dear cocaine? ~BuFi 💖</h1>
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
             <button class="no-button" onclick="handleNoClick()">No</button>
@@ -25,10 +25,10 @@
     </div>
 
     <script>
-        // Handle music autoplay
         document.addEventListener("DOMContentLoaded", function () {
             let audio = document.getElementById("bgMusic");
 
+            // Fix autoplay issue
             let playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.catch(() => {
@@ -39,12 +39,10 @@
             }
         });
 
-        // Function to handle "Yes" click (Redirect to Yes Page)
         function handleYesClick() {
-            window.location.href = "yes_page.html";
+            window.location.href = "yes_page.html"; // Redirect to Yes page
         }
 
-        // Function to handle "No" click (Funny Reaction)
         function handleNoClick() {
             alert("Are you sure? 🥺💔");
             setTimeout(() => {
