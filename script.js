@@ -1,40 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
-    const noteContainer = document.getElementById("noteContainer");
+function handleYesClick() {
+    window.location.href = "yes_page.html";
+}
 
-    let yesSize = 2.2; // Initial size for YES button
-    const notes = [
-        "Are you sure? 🥺",
-        "Think again... 😢",
-        "What if I cry? 😭",
-        "You're breaking my heart 💔",
-        "Last chance! 😭",
-        "Fine! I'll go eat chocolates alone! 🍫"
+function handleNoClick() {
+    const noButton = document.querySelector('.no-button');
+    const yesButton = document.querySelector('.yes-button');
+
+    const messages = [
+        "Are you sure?",
+        "Really sure??",
+        "Are you positive?",
+        "Pookie please...",
+        "Just think about it!",
+        "If you say no, I will be really sad...",
+        "I will be very sad...",
+        "I will be very very very sad...",
+        "Ok fine, I will stop asking...",
+        "Just kidding, say yes please! ❤️"
     ];
-    let noteIndex = 0;
 
-    noButton.addEventListener("click", function () {
-        if (noteIndex < notes.length) {
-            noteContainer.innerText = notes[noteIndex];
-            noteContainer.style.display = "block";
-            noteContainer.style.left = `${noButton.offsetLeft}px`;
-            noteContainer.style.top = `${noButton.offsetTop + 50}px`;
-            noteIndex++;
-        }
-        
-        // Increase YES button size
-        yesSize += 0.5;
-        yesButton.style.fontSize = `${yesSize}em`;
-        yesButton.style.padding = `${yesSize * 8}px ${yesSize * 20}px`;
-    });
+    let messageIndex = Math.floor(Math.random() * messages.length);
+    noButton.textContent = messages[messageIndex];
 
-    yesButton.addEventListener("click", function () {
-        document.body.innerHTML = `
-            <div class="yes-container">
-                <h1 class="yes-message">YAY! 💖</h1>
-                <p>You made my day! 🥰</p>
-            </div>
-        `;
-    });
-});
+    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+    yesButton.style.fontSize = `${currentSize * 1.2}px`;
+}
