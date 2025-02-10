@@ -1,30 +1,42 @@
-document.getElementById("yes-btn").addEventListener("click", function () {
-    window.location.href = "yes_page.html";
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+    const noteContainer = document.getElementById("noteContainer");
 
-const noButton = document.getElementById("no-btn");
-const noteContainer = document.getElementById("note-container");
+    let yesSize = 2.2; // Initial size for YES button
+    const notes = [
+        "Are you sure? 🥺",
+        "Think again... 😢",
+        "What if I cry? 😭",
+        "You're breaking my heart 💔",
+        "Last chance! 😭",
+        "Fine! I'll go eat chocolates alone! 🍫"
+    ];
+    let noteIndex = 0;
 
-const cuteNotes = [
-    "Are you sure? 🥺",
-    "But I made this with love! 💗",
-    "You're breaking my heart! 💔",
-    "Give me another chance? 🥹",
-    "I promise I'm super fun! 🎉",
-    "You're missing out on the best Valentine! 😘"
-];
+    noButton.addEventListener("click", function () {
+        if (noteIndex < notes.length) {
+            noteContainer.innerText = notes[noteIndex];
+            noteIndex++;
+        }
+        
+        // Increase YES button size
+        yesSize += 0.5;
+        yesButton.style.fontSize = `${yesSize}em`;
+        yesButton.style.padding = `${yesSize * 8}px ${yesSize * 20}px`;
 
-let index = 0;
+        // Move note container near the NO button
+        noteContainer.style.position = "absolute";
+        noteContainer.style.left = `${noButton.offsetLeft}px`;
+        noteContainer.style.top = `${noButton.offsetTop + 50}px`;
+    });
 
-noButton.addEventListener("click", function () {
-    if (index < cuteNotes.length) {
-        const note = document.createElement("p");
-        note.textContent = cuteNotes[index];
-        note.classList.add("note");
-        noteContainer.appendChild(note);
-        index++;
-    } else {
-        noButton.textContent = "Okay, I give up... 😭";
-        noButton.disabled = true;
-    }
+    yesButton.addEventListener("click", function () {
+        document.body.innerHTML = `
+            <div class="yes-container">
+                <h1 class="yes-message">YAY! 💖</h1>
+                <p>You made my day! 🥰</p>
+            </div>
+        `;
+    });
 });
