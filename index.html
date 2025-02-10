@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine?</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    
     <script>
-window.addEventListener('load', function() {
-    let audio = new Audio('music.mp3');
-    audio.loop = true;
-    audio.play().catch(error => console.log('Autoplay blocked:', error));
-});
+        window.addEventListener('load', function() {
+            let audio = new Audio('background-music.mp3');
+            audio.loop = true;
+            audio.play().catch(error => console.log('Autoplay blocked:', error));
+        });
     </script>
-
+</head>
 <body>
     <audio autoplay loop hidden>
         <source src="background-music.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
-        <h1>Will you be my Valentine, my dear cocaine?</h1>
+        <h1>Will you be my Valentine, my dear cocaine?    ~Bufi </h1>
         <div class="buttons">
             <button class="yes-button" onclick="handleYesClick()">Yes</button>
             <button class="no-button" onclick="handleNoClick()">No</button>
