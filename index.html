@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <!-- Audio Player (Hidden) -->
+    <!-- Audio Player (Autoplay & Hidden) -->
     <audio id="bgMusic" loop>
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -37,21 +37,14 @@
                 playPromise.catch(() => {
                     document.addEventListener("click", function () {
                         audio.play();
-                    }, { once: true }); // Plays on first click only
+                    }, { once: true }); // Ensures it plays on first click only
                 });
             }
         });
 
-        // Function to handle button clicks
+        // Function to handle "Yes" click (Added your message)
         function handleYesClick() {
             alert("I love you so much 💖 and I miss you so much 🥺\nI hope we can spend it together, at least online if not offline!");
         }
 
-        function handleNoClick() {
-            alert("Oh no! 😢");
-        }
-    </script>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        function 
